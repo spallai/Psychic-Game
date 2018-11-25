@@ -3,7 +3,6 @@ var wins = 0;
 var losses = 0;
 var guessesleft = 10;
 var computerSelection = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-console.log("Computer chose " + computerSelection);
 
 document.onkeyup = function (event) {
 
@@ -18,7 +17,6 @@ document.onkeyup = function (event) {
         else if (guessesleft > 1) {
             guessesleft--;
             document.getElementById("guesses-left").textContent = guessesleft;
-            console.log("You have this many guesses left " + guessesleft);
             document.getElementById("user-guess").textContent += " " + userGuess;
         }
         else {
@@ -26,11 +24,10 @@ document.onkeyup = function (event) {
             document.getElementById("losses").textContent = losses;
             reset();
         }
-        
+
         function reset() {
             guessesleft = 10;
             computerSelection = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-            console.log("Computer chose " + computerSelection);
             document.getElementById("user-guess").textContent = "";
             document.getElementById("guesses-left").textContent = guessesleft;
         }
